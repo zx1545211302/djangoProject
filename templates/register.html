@@ -5,6 +5,21 @@
     <title>register</title>
 </head>
 <body>
+    <a href="/">
+        <p>
+            主页
+        </p>
+    </a>
+    <a href="/login">
+        <p>
+            登陆
+        </p>
+    </a>
+    <a href="/register">
+        <p>
+            注册
+        </p>
+    </a>
     <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         <label>
@@ -14,6 +29,10 @@
         <label>
             <input type ='password' name="password" required>
         </label>
+        <div>性别:
+		    <label><input type="radio" name="sex" value="男生">男生</label>
+		    <label><input type="radio" name="sex" value="女生">女生</label>
+	    </div>
         <br>
         <button type="submit">注册</button>
     </form>

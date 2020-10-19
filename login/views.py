@@ -11,7 +11,7 @@ def login(request):
         password = request.POST.get('password')
         if username in data.user_data.keys():
             if password == data.user_data[username]:
-                success_login = {'success_login': '登陆成功！已跳转到主页！'}
+                success_login = {'success_login': '登陆成功！已跳转到主页！' + '您的性别是' + data.sex_data[username]}
                 return render(request, 'index.html', success_login)
             else:
                 error_password = {'error_password': '您输入的密码不匹配！'}

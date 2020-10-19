@@ -8,6 +8,7 @@ def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+        sex = request.POST.get('sex')
         if len(username) <= 20:
             if len(password) <= 25:
                 if password.isalnum():
@@ -16,6 +17,7 @@ def register(request):
                         return render(request, 'register.html', error_register_exist)
                     else:
                         data.user_data[username] = password
+                        data.sex_data[username] = sex
                         success_register = {'success_register': '注册成功,现在请您登陆！'}
                         return render(request, 'login.html', success_register)
                 else:
