@@ -8,6 +8,7 @@
     <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         <input type ='text' name="username" required>
+        <br>
         <input type ='password' name="password" required>
         <button type="submit">注册</button>
     </form>
