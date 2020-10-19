@@ -13,8 +13,10 @@ def login(request):
             if password == data.user_data[username]:
                 return render(request, 'index.html')
             else:
+                pass
                 #密码错误
         else:
+            pass
             #用户名不存在
     else:
         return render(request, 'login.html')

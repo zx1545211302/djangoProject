@@ -7,9 +7,13 @@
 <body>
     <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
-        <input type ='text' name="username" required>
+        <label>
+            <input type ='text' name="username" required>
+        </label>
         <br>
-        <input type ='password' name="password" required>
+        <label>
+            <input type ='password' name="password" required>
+        </label>
         <button type="submit">注册</button>
     </form>
 

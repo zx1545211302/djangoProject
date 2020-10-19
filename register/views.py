@@ -7,7 +7,7 @@ def register(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         if username in data.user_data.keys():
-
+            pass
         else:
             data.user_data[username] = password
 
