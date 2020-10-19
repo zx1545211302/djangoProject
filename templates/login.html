@@ -5,6 +5,9 @@
     <title>login</title>
 </head>
 <body>
+    {% if success_register %}
+    {{ success_register }}
+    {% endif %}
     <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
         <label>
@@ -14,7 +17,17 @@
         <label>
             <input type ='password' name="password" required>
         </label>
+        <br>
         <button type="submit">登陆</button>
     </form>
+    <br>
+    <br>
+    {% if error_username %}
+    {{ error_username }}
+    {% endif %}
+
+    {% if error_password %}
+    {{ error_password }}
+    {% endif %}
 </body>
 </html>

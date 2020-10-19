@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from djangoProject import data
 
+
 # Create your views here.
-happy = 'happy'
 
 
 def login(request):
@@ -11,12 +11,13 @@ def login(request):
         password = request.POST.get('password')
         if username in data.user_data.keys():
             if password == data.user_data[username]:
-                return render(request, 'index.html')
+                success_login = {'success_login': '登陆成功！已跳转到主页！'}
+                return render(request, 'index.html', success_login)
             else:
-                pass
-                #密码错误
+                error_password = {'error_password': '您输入的密码不匹配！'}
+                return render(request, 'login.html', error_password)
         else:
-            pass
-            #用户名不存在
+            error_username = {'error_username': '您输入的用户名不存在！'}
+            return render(request, 'login.html', error_username)
     else:
         return render(request, 'login.html')
