@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'aio.apps.AioConfig',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,7 @@ DATABASES = {
 #      'ENGINE': 'django.db.backends.mysql', # 数据库引擎
 #     'NAME': 'django_mysql', # 数据库名
 #        'USER': 'root', # 账号
-#        'PASSWORD': '1235618181', # 密码
+#        'PASSWORD': '12356181', # 密码
 #        'HOST': '127.0.0.1', # HOST
 #        'POST': 3306, # 端口
 #
