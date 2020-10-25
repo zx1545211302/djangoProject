@@ -34,6 +34,28 @@ def register(request):
         else:
             error_name_length = {'error_name_length': '您输入的用户名过长！'}
             return render(request, 'register.html', error_name_length)
+
+
+        # if len(username) <= 20:
+        #     if len(password) <= 25:
+        #         if password.isalnum():
+        #             if username in data.user_data.keys():#判断用户名是否存在
+        #                 error_register_exist = {'error_register_exist': '该用户名已被注册'}
+        #                 return render(request, 'register.html', error_register_exist)
+        #             else:
+        #                 data.user_data[username] = password #创建用户信息 Stundent.objects.create()
+        #                 data.sex_data[username] = sex #创建用户性别
+        #                 success_register = {'success_register': '注册成功,现在请您登陆！'}
+        #                 return render(request, 'login.html', success_register)
+        #         else:  #密码格式错误
+        #             error_pass_style = {'error_pass_style': '您输入的密码不是由英文或数字组成！'}
+        #             return render(request, 'register.html', error_pass_style)
+        #     else:   #密码格式错误
+        #         error_pass_length = {'error_pass_length': '您输入的密码过长！'}
+        #         return render(request, 'register.html', error_pass_length)
+        # else:  #用户名格式错误
+        #     error_name_length = {'error_name_length': '您输入的用户名过长！'}
+        #     return render(request, 'register.html', error_name_length)
     else:
         return render(request, 'register.html')
 
